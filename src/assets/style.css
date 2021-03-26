@@ -87,9 +87,7 @@ body {
 .total-bal{
   font-size: 4rem;
   width: 300px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-all;
   position: relative;
 }
 .list-item{
@@ -110,10 +108,9 @@ body {
 .amount {
   padding: 0 10px;
   border-radius: 50px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 150px;
+  max-width: 100px;
+  word-break: break-all;
+  max-width: 100px;
 }
 .amount.plus {
   background: #e3f8f15c;
@@ -131,6 +128,10 @@ body {
   font-size: 1.6rem;
   text-align: center;
   position: relative;
+  flex-wrap: wrap;
+}
+.money {
+  word-break: break-all;
 }
 
 label {
@@ -178,7 +179,7 @@ input[type='number'] {
   margin-bottom: 40px;
 }
 .list .title{
-  width: 220px;
+  max-width: 220px;
   word-break: break-word;
   padding-right: 15px;
   margin-bottom: 6px;
