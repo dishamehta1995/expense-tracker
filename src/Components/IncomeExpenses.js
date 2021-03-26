@@ -10,11 +10,11 @@ export const IncomeExpenses = () => {
         <ul className="inc-exp-container">
             <li className='list-item'>
                 <h2>Income</h2>
-                <p className="money plus">+${income}</p>
+                <p className="money plus">₹ {income}</p>
             </li>
             <li className='list-item'>
                 <h2>Expense</h2>
-                <p className="money minus">-${expense}</p>
+                <p className="money minus">₹ {expense}</p>
             </li>
         </ul>
     )

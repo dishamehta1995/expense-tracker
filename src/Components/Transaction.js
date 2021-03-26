@@ -12,7 +12,7 @@ export const Transcation = ({transaction,i}) => {
                 <p className='title'>{transaction.text} </p>
                 <p className='time'>{transaction.date}</p>
             </div>
-            <p className={transaction.amount > 0 ? 'amount plus' : 'amount minus'}>{sign}${Math.abs(transaction.amount)}</p>
+            <p className={transaction.amount > 0 ? 'amount plus' : 'amount minus'}>{sign}₹{Math.abs(transaction.amount)}</p>
         </li>
     )
 }
