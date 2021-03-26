@@ -177,6 +177,12 @@ input[type='number'] {
   padding: 0;
   margin-bottom: 40px;
 }
+.list .title{
+  width: 220px;
+  word-break: break-word;
+  padding-right: 15px;
+  margin-bottom: 6px;
+}
 .delete-btn {
   cursor: pointer;
   border: 0;
@@ -187,7 +193,7 @@ input[type='number'] {
   position: absolute;
   top: 50%;
   left: 0;
-  transform: translate(-100%, -50%);
+  transform: translate(-130%, -50%);
   opacity: 1;
   transition: opacity 0.3s ease;
 }
