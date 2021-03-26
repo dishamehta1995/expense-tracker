@@ -8,7 +8,7 @@ export const Balance = () => {
     return (
         <div className='center'>
             <h1 className='title'>Your Balance</h1>
-            <p className='total-bal'>₹{total}</p>
+            <p className='total-bal'>{total < 0 ? '- ₹' : '₹'} {total.replace("-", "")}</p>
         </div>
     )
 }

@@ -14,7 +14,7 @@ export const IncomeExpenses = () => {
             </li>
             <li className='list-item'>
                 <h2>Expense</h2>
-                <p className="money minus">₹ {expense}</p>
+                <p className="money minus">₹ {expense.replace("-", "")}</p>
             </li>
         </ul>
     )
