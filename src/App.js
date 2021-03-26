@@ -1,5 +1,4 @@
 import './assets/style.css';
-import bgImag from './assets/bg.jpg'
 import { Balance } from "./Components/Balance";
 import { IncomeExpenses } from './Components/IncomeExpenses';
 import { TransactionsList } from './Components/TransactionList';
@@ -11,9 +10,9 @@ const App = () => {
     <GlobalProvider>
         <div className='header'>
           <Balance />
+          <IncomeExpenses/>
         </div>
         <div className="container">
-          <IncomeExpenses/>
           <TransactionsList/>
           <AddTransactions />
         </div>

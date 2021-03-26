@@ -9,7 +9,7 @@ export const TransactionsList = () => {
 
     return (
         <>
-          <h3 className='title'>All</h3>
+          <h3 className='title'>History</h3>
             <ul id="list" className="list">
                 {
                     transactions.length === 0 ? <li className='list-item'>No transaction added yet!</li> :

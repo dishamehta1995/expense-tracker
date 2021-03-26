@@ -7,15 +7,15 @@ export const IncomeExpenses = () => {
     const income = amounts.filter(item => item > 0).reduce((acc,item) => (acc += item),0).toFixed(2)
     const expense = amounts.filter(item => item < 0).reduce((acc,item) => (acc += item),0).toFixed(2)
     return (
-        <div className="inc-exp-container">
-            <div>
-                <h4>Income</h4>
+        <ul className="inc-exp-container">
+            <li className='list-item'>
+                <h2>Income</h2>
                 <p className="money plus">+${income}</p>
-            </div>
-            <div>
-                <h4>Expense</h4>
+            </li>
+            <li className='list-item'>
+                <h2>Expense</h2>
                 <p className="money minus">-${expense}</p>
-            </div>
-        </div>
+            </li>
+        </ul>
     )
 }
