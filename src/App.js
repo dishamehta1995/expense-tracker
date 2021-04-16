@@ -1,5 +1,5 @@
-import './assets/style-2.css';
 import { GlobalProvider } from './Context/GlobalState';
+import './assets/style-2.css';
 import { Header } from "./Components/Header";
 import { Balance } from "./Components/Balance";
 import { IncomeExpenses } from './Components/IncomeExpenses';
