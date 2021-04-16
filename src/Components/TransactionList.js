@@ -3,9 +3,10 @@ import { GlobalContext } from '../Context/GlobalState'
 import { Transcation } from './Transaction'
 export const TransactionsList = () => {
     const [transactionType,setTransactionType] = useState('all')
-    const {transactions} = useContext(GlobalContext)
+    const {transactions,activeSheet} = useContext(GlobalContext)
     const [transactionData,setTransactionData] = useState(transactions)
     useEffect(() => {
+        localStorage.setItem(activeSheet,JSON.stringify(transactions))
         switch (transactionType) {
             case 'income':
                 return setTransactionData(transactions.filter((item) => item.amount > 0 ))    
