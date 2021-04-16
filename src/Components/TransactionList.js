@@ -6,7 +6,6 @@ export const TransactionsList = () => {
     const {transactions} = useContext(GlobalContext)
     const [transactionData,setTransactionData] = useState(transactions)
     useEffect(() => {
-        localStorage.setItem('transactions',JSON.stringify(transactions))
         switch (transactionType) {
             case 'income':
                 return setTransactionData(transactions.filter((item) => item.amount > 0 ))    
@@ -20,15 +19,16 @@ export const TransactionsList = () => {
     }, [transactions,transactionType])
 
     const filterTransaction = (e) =>{
-        setTransactionType(e.target.attributes.datatype.value)
+        if(e.target.attributes.datatype !== undefined)
+            setTransactionType(e.target.attributes.datatype.value)
     }
 
     return (
         <>
-            <ul className='d-flex tab-list' onClick={filterTransaction}>
-                <li className={transactionType === 'all' ? 'active title tab-items' : 'title tab-items'} datatype='all'>All</li>
-                <li className={transactionType === 'income' ? 'active title tab-items' : 'title tab-items'} datatype='income'>Income</li>
-                <li className={transactionType === 'expense' ? 'active title tab-items' : 'title tab-items'} datatype='expense'>Expense</li>
+            <ul className='d-flex tab-list justify-space' onClick={filterTransaction}>
+                <li className={transactionType === 'all' ? 'active tab-items' : 'tab-items'} datatype='all'>All</li>
+                <li className={transactionType === 'income' ? 'active tab-items income' : 'tab-items'} datatype='income'>Income</li>
+                <li className={transactionType === 'expense' ? 'active tab-items expense' : 'tab-items'} datatype='expense'>Expense</li>
             </ul>
             <ul id="list" className="list">
                 {

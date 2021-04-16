@@ -2,6 +2,10 @@ import React from 'react'
 
 export const Header = () => {
     return (
-        <h1 className='center title'>Expense Tracker</h1>
+        <>
+            <div className='d-flex align-baseline heading-wrap'>
+                <h1 className='title-heading mt-20'>Expense Tracker</h1>
+            </div>
+        </>
     )
 }

@@ -34,18 +34,18 @@ a:focus,input:focus{outline:none;list-style:none;}
 *:hover{transition: .2s ease;}
 html,body{font-family:"Poppins",-apple-system, BlinkMacSystemFont, Segoe UI, segoe ui, SegoeUI, Segoe, Helvetica, Arial, sans-serif;color:#858A8F;position:relative;-webkit-backface-visibility:hidden !important;backface-visibility:hidden !important;-webkit-overflow-scrolling:touch;font-size:62.5%;-webkit-text-size-adjust:100%;font-weight:400;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 body { background-color: #fff; color: #385573; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
-#root { background: #fff; max-width: 450px; box-shadow: 0px -4px 13px -5px #d3cce3; width: 100%; margin: 0 auto; }
-.header{ background: #D3CCE3; background: -webkit-linear-gradient(to left, #eaeaea, #fefeff); background: linear-gradient(to left, #eaeaea, #fefeff); display: flex; align-items: center; justify-content: center; position: relative; flex-direction: column; padding: 50px 0; }
-.header:before{ content: ""; position: absolute; background: url('./bg.jpg') no-repeat center right; position: absolute; width: 100%; height: 100%; background-size: cover; opacity: 0.3; }
-.container { margin: -25px auto 0; width: 100%; padding: 30px 45px; border-radius: 40px; background: #fff; box-shadow: 0px -4px 13px -5px #d3cce3; position: relative; }
+#root { background: #fff; box-shadow: 0px -4px 13px -5px #d3cce3; width: 100%; margin: 0 auto; display: flex;min-height: 100vh;}
+.section-banner{ background: #D3CCE3; background: -webkit-linear-gradient(to left, #eaeaea, #fefeff); background: linear-gradient(to left, #eaeaea, #fefeff); display: flex; align-items: center; justify-content: center; position: relative; flex-direction: column; padding: 50px 0; }
+.section-banner:before{ content: ""; position: absolute; background: url('./bg.jpg') no-repeat center right; position: absolute; width: 100%; height: 100%; background-size: cover; }
+.container { margin: 0 auto; width: 100%; padding: 30px 20px; background: #fff; box-shadow: 0px -4px 13px -5px #d3cce3; position: relative;}
 .title{ font-size: 1.6rem; }
-.total-bal{ font-size: 4rem; width: 300px; word-break: break-all; position: relative; }
-.list-item{ padding:0 30px; }
-.list .list-item{ font-size: 1.4rem; background-color: #fff; color: #333; display: flex; justify-content: space-between; position: relative; padding: 10px; margin: 10px 0; border-bottom: 1px solid #edf2f2; align-items: center; }
+.total-bal{ font-size: 4rem; max-width: 300px; word-break: break-all; position: relative; margin: auto;}
+.list-item{ padding:0 15px; }
+.list .list-item{ font-size: 1.4rem; background-color: #fff; color: #333; display: flex; justify-content: space-between; position: relative; padding: 10px; margin: 10px 0; border-bottom: 1px solid #edf2f2; align-items: center; padding-left: 35px;}
 .amount { padding: 0 10px; border-radius: 50px; max-width: 100px; word-break: break-all; max-width: 100px; }
 .amount.plus { background: #e3f8f15c; box-shadow: 0px 0px 10px 2px #e3f8f1; color: #3a9987; }
 .time { margin-bottom: 6px; color: #8b9dae; }
-.inc-exp-container { display: flex; justify-content: space-between; margin: 30px; font-size: 1.6rem; text-align: center; position: relative; flex-wrap: wrap; }
+.inc-exp-container { display: flex; justify-content: space-evenly; margin: 30px auto 0;max-width: 300px;width: 100%; font-size: 1.6rem; text-align: center; position: relative; flex-wrap: wrap; }
 .money { word-break: break-all; }
 label { display: block; margin: 20px 0 10px; font-size: 1.2rem; }
 label span{ float: right; }
@@ -55,9 +55,9 @@ input[type='number'] { border-bottom: 1px solid #dedede; border-radius: 2px; dis
 .btn { cursor: pointer; background-color: #202944; color: #fff; border: 0; display: block; font-size: 1.6rem; margin: 10px 0 30px; padding: 10px; width: 100%; border-radius: 50px; }
 .btn:focus,
 .delete-btn:focus { outline: 0; }
-.list { list-style-type: none; padding: 0; margin-bottom: 40px;}
+.list { list-style-type: none; padding: 0; margin:20px auto 40px;max-width: 450px;}
 .list .title{ max-width: 220px; word-break: break-word; padding-right: 15px; margin-bottom: 6px;}
-.delete-btn { cursor: pointer; border: 0; color: #8c9eaf; font-size: 20px; line-height: 20px; padding: 2px 5px; position: absolute; top: 50%; left: 0; transform: translate(-130%, -50%); opacity: 1; transition: opacity 0.3s ease; }
+.delete-btn { cursor: pointer; border: 0; color: #8c9eaf; font-size: 20px; line-height: 20px; padding: 2px 5px; position: absolute; top: 50%; left: 0; transform: translate(0%, -50%); opacity: 1; transition: opacity 0.3s ease; }
 .center { text-align: center; position: relative; }
 .checkbox { display: flex;align-items: center;margin-bottom: 30px;}
 .checkbox label{margin: 0 10px 0;}
@@ -65,4 +65,22 @@ input[type='number'] { border-bottom: 1px solid #dedede; border-radius: 2px; dis
 .d-flex{display: flex;}
 .tab-list .tab-items{cursor: pointer;transition: .5s ease-in-out;padding: 10px 15px;border-radius: 50px;}
 .tab-list { color: #d3cce3; border-radius: 50px; margin-bottom: 30px; border: 1px solid #edf2f2; width: 240px; margin: 0 auto 30px; font-weight: 100; }
-.tab-list .tab-items.active{    background: #385573; color: #fff; transition: .5s ease-in-out;}
+.tab-list .tab-items.active{background: #385573; color: #fff; transition: .5s ease-in-out;}
+.col{flex: 0 0 50%}
+.close, .show-icon{display: none;}
+.light-wrap{background-color: #fff;padding: 30px 20px;position: relative;border-radius: 25px;width: 80%;margin-bottom: 30px;}
+.col-left{    border-top-left-radius: 45px; border-bottom-left-radius: 45px;}
+/* .nav{flex: 0 0 10%;} */
+@media (max-width:650px){
+  #root{flex-direction: column;padding:0}
+  .container{margin: -25px auto 50px;border-radius: 40px;}
+  .add-transcation{display: none;}
+  .list {max-width: 450px; margin: auto; }
+  .show-icon {color: #fff; position: fixed; font-size: 3rem; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #385573; bottom: 20px; z-index: 1; right: 20px;cursor: pointer;}
+  .section-banner:before{opacity: 0.3;}
+  .light-wrap{background-color: transparent;}
+  .add-transcation.show{position: fixed; background: #33333330; top: 0; width: 100%; z-index: 2; height: 100vh; padding: 50px 25px; border-radius: 0; display: flex; justify-content: center; align-items: center;}
+  .form-wrap{ background: #fff; width: 100%; padding: 30px;}
+  .show-icon.hide{display: none;}
+  .close{display: block; text-align: right; margin-bottom: 20px; font-size: 1.2rem;}
+}
