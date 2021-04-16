@@ -3,7 +3,7 @@ import AppReducer from './AppReducer';
 
 const localData = JSON.parse(localStorage.getItem('sheet 1'));
 const initialState = {
-  transactions: (localData && localData.length > 0) ? JSON.parse(localStorage.getItem('sheet 1')) : {
+  transactions: (localData) ? JSON.parse(localStorage.getItem('sheet 1')) : {
     catergories :[],
     data:[]
   },
