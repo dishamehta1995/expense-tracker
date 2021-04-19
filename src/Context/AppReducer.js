@@ -29,11 +29,23 @@ export default (state, action) => {
             case 'CHANGE_SHEET':
               return {
                 ...state,
-                transactions: JSON.parse(localStorage.getItem(action.payload)),
+                transactions: {
+                  data:JSON.parse(localStorage.getItem(action.payload)).data,
+                  catergories:JSON.parse(localStorage.getItem(action.payload)).catergories,
+                },                  
                 activeSheet: action.payload,
               }
 
             case 'ADD_CATEGORY':
+              return {
+                ...state,
+                transactions: {
+                  catergories:[action.payload, ...state.transactions.catergories],
+                  data:[...state.transactions.data],
+                },
+            }
+          
+            case 'FILTER_CATEGORY':
               return {
                 ...state,
                 transactions: {

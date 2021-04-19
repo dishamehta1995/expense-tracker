@@ -4,7 +4,6 @@ import { GlobalContext } from '../Context/GlobalState'
 export const Categories = () => {
 
     const { addCategory,catergories} = useContext(GlobalContext);
-
     const [cat, setCat] = useState('')
     const addNewCat = (e) => {
         if(e.which === 13 && !catergories.includes(e.target.value)){
