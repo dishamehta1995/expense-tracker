@@ -1,13 +1,15 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import { GlobalContext } from '../Context/GlobalState'
 
 export const Categories = () => {
 
     const { addCategory,catergories} = useContext(GlobalContext);
 
+    const [cat, setCat] = useState('')
     const addNewCat = (e) => {
         if(e.which === 13 && !catergories.includes(e.target.value)){
             addCategory(e.target.value)
+            setCat('')
         }
     }
 
@@ -25,6 +27,8 @@ export const Categories = () => {
                 type='text'
                 className='add-new'
                 onKeyUp={addNewCat} 
+                value={cat}
+                onChange={(e) => setCat(e.target.value)} 
                 placeholder='Add new' 
                 required
                 min='1'

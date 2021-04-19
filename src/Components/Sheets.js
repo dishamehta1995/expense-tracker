@@ -1,11 +1,12 @@
-import React,{useContext} from 'react'
+import React,{useContext,useState} from 'react'
 import { GlobalContext } from '../Context/GlobalState'
 export const Sheets = () => {
     const { addSheet, sheetName, changeSheet, activeSheet} = useContext(GlobalContext);
-
+    const [sheet, setSheet] = useState('')
     const addNewSheet = (e) => {
         if(e.which === 13 && !sheetName.includes(e.target.value)){
             addSheet(e.target.value)
+            setSheet('')
         }
     }
     
@@ -23,6 +24,8 @@ export const Sheets = () => {
                 type='text'
                 className='add-new' 
                 onKeyUp={addNewSheet} 
+                value={sheet}
+                onChange={(e) => setSheet(e.target.value)} 
                 placeholder='Add new' 
                 required
                 min='1'
